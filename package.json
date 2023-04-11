@@ -1,6 +1,6 @@
 {
   "name": "@ephys/fox-forge",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "JavaScript Utility Library",
   "main": "index.js",
   "repository": "git@github.com:ephys/fox-forge.git",

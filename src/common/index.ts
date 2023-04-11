@@ -1,11 +1,15 @@
 /** Generated File, do not modify directly. Run "yarn sync" instead */
 
 export * from './clamp.js';
+export * from './consts.js';
 export * from './inspect.js';
 export * from './is-functions/is-any-object.js';
 export * from './is-functions/is-big-int.js';
 export * from './is-functions/is-function.js';
+export * from './is-functions/is-null.js';
+export * from './is-functions/is-nullish.js';
 export * from './is-functions/is-string.js';
+export * from './is-functions/is-undefined.js';
 export * from './iterator-helpers/array-from-async.js';
 export * from './iterator-helpers/combined-iterator.js';
 export * from './iterator-helpers/count.js';

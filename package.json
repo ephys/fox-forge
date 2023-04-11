@@ -19,7 +19,7 @@
     "test:types": "tsc --noEmit",
     "test:jest": "jest --passWithNoTests",
     "test": "yarn test:lint && yarn test:types && yarn test:jest",
-    "postinstall": "yarn build",
+    "prepare": "yarn build",
     "prepublishOnly": "yarn build && yarn test"
   },
   "publishConfig": {

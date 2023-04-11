@@ -1,8 +1,5 @@
 import type { AssertionFunction } from '../.internal/build-assertion-function.js';
-import {
-  buildAssertionFunction,
-  toBe,
-} from '../.internal/build-assertion-function.js';
+import { buildAssertionFunction, toBe } from '../.internal/build-assertion-function.js';
 
 /**
  * Returns true if the value is a JS bigint.

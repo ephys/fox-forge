@@ -1,5 +1,5 @@
-import type { MaybePromise } from '../types.js';
 import { map } from './map.js';
+import type { MaybePromise } from '../types.js';
 
 /**
  * Executes async code in parallel for each value of an iterable.

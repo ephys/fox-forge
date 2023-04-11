@@ -5,7 +5,7 @@ import type { FileHandle } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { arrayFromAsync, parallelForEach } from '@ephys/fox-forge';
-import { listFilesRecursive, isNodeError } from '@ephys/fox-forge/node';
+import { isNodeError, listFilesRecursive } from '@ephys/fox-forge/node';
 
 /**
  * does not modify the contents of the file but exits with code 1 if outdated, 0 if not

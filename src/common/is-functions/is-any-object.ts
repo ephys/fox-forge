@@ -1,8 +1,5 @@
 import type { AssertionFunction } from '../.internal/build-assertion-function.js';
-import {
-  buildAssertionFunction,
-  toBe,
-} from '../.internal/build-assertion-function.js';
+import { buildAssertionFunction, toBe } from '../.internal/build-assertion-function.js';
 
 /**
  * Returns whether the provided value is a JavaScript Object (i.e. anything but a primitive).

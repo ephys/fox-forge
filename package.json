@@ -1,0 +1,37 @@
+{
+  "name": "@ephys/fox-forge",
+  "version": "1.0.0",
+  "description": "JavaScript Utility Library",
+  "main": "index.js",
+  "repository": "git@github.com:ephys/fox-forge.git",
+  "author": "Zoé Cox <zoe@ephys.dev>",
+  "license": "MIT",
+  "type": "commonjs",
+  "exports": {
+    ".": "./dist/common/index.js",
+    "./node": "./dist/node/index.js"
+  },
+  "scripts": {
+    "build": "tsc  --project tsconfig.build.json",
+    "sync": "ts-node-esm ./sync.mts",
+    "lint": "eslint . --report-unused-disable-directives --fix",
+    "test:lint": "eslint . --report-unused-disable-directives",
+    "test:types": "tsc --noEmit",
+    "test:jest": "jest --passWithNoTests",
+    "test": "yarn test:lint && yarn test:types && yarn test:jest",
+    "postinstall": "yarn build",
+    "prepublishOnly": "yarn build && yarn test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@ephys/eslint-config-typescript": "^18.0.1",
+    "@types/node": "^18.15.11",
+    "eslint": "^8.38.0",
+    "jest": "^29.5.0",
+    "ts-node": "^10.9.1",
+    "typescript": "5.0.4",
+    "yarn": "^1.22.19"
+  }
+}

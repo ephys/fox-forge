@@ -1,0 +1,7 @@
+{
+  "extends": "@ephys/eslint-config-typescript",
+  "rules": {
+    "consistent-return": "off"
+  },
+  "ignorePatterns": ["/dist"]
+}

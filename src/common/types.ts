@@ -2,11 +2,45 @@ export type MaybePromise<T> = T | Promise<T>;
 
 export type Nullish = null | undefined;
 
-export type NonUndefined<T> = T extends undefined ? never : T;
+export type ExcludeUndefined<T> = T extends undefined ? never : T;
 
-export type NonNull<T> = T extends null ? never : T;
+export type ExcludeNull<T> = T extends null ? never : T;
 
-export type NonNullish<T> = NonNullable<T>;
+export type ExcludeNullish<T> = NonNullable<T>;
+
+/**
+ * Removes the `undefined` type from the properties of a type.
+ * The second generic is used to specify which properties to remove the `undefined` type from.
+ */
+export type ExcludeUndefinedProperties<Type, Keys extends keyof Type = keyof Type> = ExcludePropertiesOfType<
+  RequiredByKey<Type, Keys>,
+  undefined,
+  Keys
+>;
+
+/**
+ * Removes the `null` type from the properties of a type.
+ * The second generic is used to specify which properties to remove the `null` type from.
+ */
+export type ExcludeNullProperties<Type, Keys extends keyof Type = keyof Type> = ExcludePropertiesOfType<Type, null, Keys>;
+
+/**
+ * Removes the `null` and `undefined` types from the properties of a type.
+ * The second generic is used to specify which properties to remove the `null` and `undefined` types from.
+ */
+export type ExcludeNullishProperties<Type, Keys extends keyof Type = keyof Type> = ExcludePropertiesOfType<
+  RequiredByKey<Type, Keys>,
+  Nullish,
+  Keys
+>;
+
+/**
+ * Removes the specified type from the properties of a type.
+ * The third generic is used to specify which properties to remove the specified type from.
+ */
+export type ExcludePropertiesOfType<Type, Excluded, Keys extends keyof Type = keyof Type> = {
+  [Key in keyof Type]: Key extends Keys ? Exclude<Type[Key], Excluded> : Type[Key];
+};
 
 /**
  * Represents any plain function (no `this`)

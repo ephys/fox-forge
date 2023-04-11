@@ -60,7 +60,7 @@ await parallelForEach(folders, async folder => {
 if (outdatedPaths.length === 0) {
   console.info('All index files up-to-date');
 } else {
-  const fileListStr = outdatedPaths.map(pathName => `- ${pathName}\n`);
+  const fileListStr = outdatedPaths.map(pathName => `- ${pathName}\n`).join('');
   if (checkOutdated) {
     console.info(`Outdated files:\n${fileListStr}`);
 

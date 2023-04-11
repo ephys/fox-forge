@@ -1,0 +1,8 @@
+/src
+/.idea
+/.eslintrc
+/.gitignore
+/sync.mts
+/tsconfig.build.json
+/tsconfig.json
+/yarn.lock
